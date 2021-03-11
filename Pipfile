@@ -4,9 +4,12 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-requests-html = "*"
+requests = "*"
+pandas = "*"
 
 [dev-packages]
+ipykernel = "*"
+rope = "*"
 
 [requires]
-python_version = "3.6"
+python_version = "3.9"
