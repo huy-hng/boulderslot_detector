@@ -43,12 +43,9 @@ def pushbullet_message(title, body):
 filt = df['state'].apply(is_available)
 available = df[filt]
 if len(available) > 5:
-	pushbullet_message('Many new slots available.', len(available))
+	pushbullet_message('Many new slots available.', str(len(available)))
 else:
 	for index, slot in available.iterrows():
 		slot_time = unix_to_datetime(slot['dateList'][0]['start'])
 		available_slots = int(slot['maxCourseParticipantCount']) - int(slot['currentCourseParticipantCount'])
 		pushbullet_message(str(slot_time), f'Available Slots: {available_slots}')
-		# print(index)
-		# if index == 155:
-		# 	break
